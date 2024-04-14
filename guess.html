@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Word</title>
+    <link rel="stylesheet" href="guess.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900">
+    <div class="container mx-auto py-4 px-4">
+        <div class="hiddenContainer hidden text-white border-2 border-white rounded-lg p-8 ">
+            <div class="title mb-4">
+                <h3 class="text-xl font-bold mb-6">How To Play</h3>
+                <p class="mb-4">Try to Guess The Word in 6 Tries</p>
+                <ul class="list-disc pl-4">
+                    <li>The color of the tiles will change to show 
+                        how close your guess was to the word.
+                    </li>
+                </ul>
+                <h3 class="text-xl font-bold m-4">
+                    Examples
+                </h3>
+            </div>
+            
+            <div class="helpContainer space-y-2">
+                <div class="help flex">
+                        <img src="right.JPG" alt="">
+                    <h4 class="text-lg font-medium">Letter is Right And In Place</h4>
+                </div>
+                <hr class="my-1">
+                <div class="help flex">
+                        <img src="correctPlace.JPG" alt="">
+                    <h4 class="text-lg font-medium">Letter is Right And Wrong Place</h4>
+                </div>
+                <hr class="my-1">
+                <div class="help flex">
+                        <img src="wrong.JPG" alt="">
+                    <h4 class="text-lg font-medium">Letter is Wrong And doesn't Exist</h4>
+                </div>
+                <hr class="my-1 h-4">
+
+                <div class="help flex">
+                        <img src="hint.JPG" class="hintImg" alt="">
+                        <h4 class="text-lg font-medium">This Button helps you to get hints to help you guess the word.</h4>
+                </div>
+            </div>
+        </div>
+        <header class="flex justify-center text-white w-full items-center relative">
+            <div class="mainTitle flex justify-center text-white w-full items-center relative">
+                <h3 class="font-bold text-xl m-2">Guess The Word</h3>
+            </div>
+            <div class="aide absolute right-0 cursor-pointer">
+                <i class="bi bi-question-circle-fill text-gray-500 text-xl"></i>
+            </div>
+        </header>
+        <hr class="my-1 h-4">
+
+        <div class="content mx-auto w-1/2  flex justify-space-evenly">
+            <div>
+                <div class="allInputs"> </div>
+                <div class="btns mt-4 flex w-full items-center">
+                    <button onclick="checkWord()" class="checkBtn  border-2 border-transparent w-60 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded m-10">Check Word</button>
+                    <button onclick="hint()" class="hintBtn w-50  border-2 border-transparent text-lg bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded m-10"><span class="hintSpan"></span> Hint</button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-1 h-4">
+        <footer class="flex justify-center">
+            <h3 class="theMsg font-bold text-xl mt-4"></h3>
+        </footer>
+    </div>
+
+    <script src="guess.js"></script>
+</body>
+</html>
