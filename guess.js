@@ -99,7 +99,6 @@ function checkWord() {
 }
 
 
-
 function checkInputs(allGreen) {
   let isGuessed = false
   if (allGreen && hintNumber !== 2) {
@@ -110,6 +109,7 @@ function checkInputs(allGreen) {
     disableAllInputs()
     isGuessed = true
   } else if (allGreen && hintNumber === 2) {
+    score++
     toggleClass()
     theMsg.innerHTML = `Great Work You Guessed The Word Right Without Using Any Hint`
     disableAllInputs()
@@ -119,6 +119,7 @@ function checkInputs(allGreen) {
     if (liveDivs.length === 0 && !isGuessed) {
       toggleClass()
       score = 0
+      scoreContainer.innerHTML = score
       theMsg.innerHTML = `Good Luck Next Time By The Way The Word You Were Looking For is <span class="text-blue-800"> ${wordToGuess.join("")} </span>`
       disableAllInputs()
     }
