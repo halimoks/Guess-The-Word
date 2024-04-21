@@ -97,12 +97,8 @@ function checkWord() {
   })
   checkInputs(allGreen)
 }
-console.log(sessionStorage.getItem("guessScore"))
 
-function toggleClass(){
-    rsltContainer.classList.remove("hidden")
-    twoBtnsContainer.style.display = "flex"
-}
+
 
 function checkInputs(allGreen) {
   let isGuessed = false
@@ -115,7 +111,6 @@ function checkInputs(allGreen) {
     isGuessed = true
   } else if (allGreen && hintNumber === 2) {
     toggleClass()
-    score++
     theMsg.innerHTML = `Great Work You Guessed The Word Right Without Using Any Hint`
     disableAllInputs()
     isGuessed = true
@@ -123,6 +118,7 @@ function checkInputs(allGreen) {
     let liveDivs = document.querySelectorAll(".live")
     if (liveDivs.length === 0 && !isGuessed) {
       toggleClass()
+      score = 0
       theMsg.innerHTML = `Good Luck Next Time By The Way The Word You Were Looking For is <span class="text-blue-800"> ${wordToGuess.join("")} </span>`
       disableAllInputs()
     }
@@ -144,7 +140,7 @@ function hint() {
       theMsg.innerHTML = "You Ran Out Of Hints"
       hintBtn.disabled = true 
       setTimeout(() => {
-          rsltContainer.classList.add("hidden")
+        rsltContainer.classList.add("hidden")
       }, 1000);
     }
 
@@ -182,11 +178,16 @@ function disableAllInputs() {
   hintBtn.disabled = true
 }
 
-  helpBtn.addEventListener('click', function (event) {
-    hiddenContainer.classList.toggle('hidden');
-    mainTitle.style.opacity = hiddenContainer.classList.contains('hidden') ? "1" : "0";
-    let hideContainer = document.querySelector(".hideThisContainer")
+function toggleClass(){
+    rsltContainer.classList.remove("hidden")
+    twoBtnsContainer.style.display = "flex"
+}
 
+helpBtn.addEventListener('click', function (event) {
+  hiddenContainer.classList.toggle('hidden');
+  mainTitle.style.opacity = hiddenContainer.classList.contains('hidden') ? "1" : "0";
+    let hideContainer = document.querySelector(".hideThisContainer")
+    
     hideContainer.addEventListener("click" , function(){
       hideIt()
     })
