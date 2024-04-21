@@ -1,101 +1,17 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
-.hidden{
-    display: block;
-}
 
-.content h2 {
-    font-size: 1.3rem;
-    margin-left: 10px;
-}
 .help img{
     width: 30%;
 }
 
-.help .hintImg{
-    width: 40%;
-    height: 40px;
+.rslt{
+    left: 400px;
+    top: 200px;
+    border-radius: 20px;
 }
 
-.inp {
-    margin: auto;
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-    font-family: "Clear Sans","Helvetica Neue",Arial,sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #5b5b5b;
-    color: white;
-}
-.inp:focus {
-    outline: none;
-    cursor:context-menu;
-}
-.inp:hover{
-    cursor: context-menu;
-}
-.checkBtn , .hintBtn{
-    cursor: pointer;
-}
-
-.inp.green {
-    background-color: #00b000;
-}
-.inp.orange {
-    background-color: #d45222;
-}
-.inp.gray {
-    background-color: #373131;
-}
-.live , .theMsg{
+.live {
     color: white;
 }
 .dead {
     color: #515752;
-}
-
-.tries, .help {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.help {
-    border: 2px solid rgb(81, 49, 113);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.helpContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-}
-
-.hiddenContainer{
-    margin: auto;
-    position: absolute;
-    left: 33%;
-    top: 0;
-    width: 34rem;
-    height: 43rem;
-    padding: 30px;
-    border-radius: 20px;
-    color: white;
-    background-color: #121213;
-}
-
-
-button:disabled {
-    background-color: black;
-    opacity: 0.4;
-    cursor: not-allowed;
-}
-
-hr {
-    height: 4px;
 }
