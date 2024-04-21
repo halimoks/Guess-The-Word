@@ -14,7 +14,7 @@ let numberOfInputs = 5
 let hintNumber = 2
 let allInputss= document.querySelectorAll(".inp")
 let scoreContainer = document.querySelector("#score")
-let score = 0
+let score = sessionStorage.getItem("guessScore") || 0
 let theMsg = document.querySelector(".theMsg")
 let rsltContainer = document.querySelector(".rslt")
 let exitBtn = document.querySelector("#exit")
@@ -40,6 +40,7 @@ function createDivs() {
     allInputs.appendChild(newDiv)
   }
   allInputs.firstElementChild.classList.add("live")
+  scoreContainer.innerHTML = score
   disableInputsExceptFirst()
 }
 
@@ -96,6 +97,7 @@ function checkWord() {
   })
   checkInputs(allGreen)
 }
+console.log(sessionStorage.getItem("guessScore"))
 
 function toggleClass(){
     rsltContainer.classList.remove("hidden")
@@ -202,7 +204,7 @@ function disableAllInputs() {
   })
 
   continueBtn.addEventListener("click" , function(){
-    scoreContainer.innerHTML = score;
+    scoreContainer.innerHTML = sessionStorage.getItem("guessScore");
     generateNew()
     sessionStorage.setItem("guessScore" , score)
     rsltContainer.classList.add("hidden")
